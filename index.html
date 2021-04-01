@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
+  <title>我们的支付</title>
+  <link rel="stylesheet" href="./publics/css/commonH5.css">
+
+  <!-- bootstrap插件 -->
+  <link rel="stylesheet" href="./publics/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="./publics/css/m_serverReg.css">
+  <!-- <link rel="stylesheet" href="/public/css/m_serverReg.css"> -->
+
+
+</head>
+
+<body style="position: relative;">
+  <div class="container">
+    <div class="mask2"></div>
+
+    <div class="titles">
+      <div class="function function1">会员管理</div>
+      <div class="function function2">积分查询</div>
+      <div class="function function3">购买记录</div>
+
+
+    </div>
+
+    <!-- 会员管理 -->
+    <div class="blockTitle blockTitle1">
+      <div class="blockTitle-item addvip">新增会员</div>
+      <div class="blockTitle-item addmoney">新增消费</div>
+    </div>
+
+
+    <!-- 积分查询 -->
+    <div class="blockTitle blockTitle2">
+      <form class="myForm myForm10">
+        <div class="form-group">
+          <label for="userNameJF">姓名</label>
+          <input type="text" class="form-control" placeholder="请输入姓名" value="" id="userNameJF" name="userNameJF">
+        </div>
+        <div class="form-group">
+          <label for="userPhoneJF">手机号码</label>
+          <input type="tel" class="form-control" placeholder="请输入手机号码" id="userPhoneJF" name="userPhoneJF">
+        </div>
+        <div class="checkButton checkJF">积分查询</div>
+      </form>
+    </div>
+
+    <!-- 新增消费 -->
+    <div class="blockTitle blockTitle3">
+      <form class="myForm myForm11">
+        <div class="form-group">
+          <label for="userName">姓名</label>
+          <input type="text" class="form-control" placeholder="请输入姓名" value="" id="userName" name="userName">
+        </div>
+        <div class="form-group">
+          <label for="userPhone">手机号码</label>
+          <input type="tel" class="form-control" placeholder="请输入手机号码" id="userPhone" name="userPhone">
+        </div>
+        <div class="form-group">
+          <label for="startTime" style="line-height: 0.75rem;">开始时间</label>
+          <input type="text" class="form-control" placeholder="示例值：2026-06-06" value="" id="startTime" name="startTime">
+        </div>
+        <div class="form-group">
+          <label for="endTime" style="line-height: 0.75rem;">结束时间</label>
+          <input type="text" class="form-control" placeholder="示例值：2026-06-06" value="" id="endTime" name="endTime">
+        </div>
+
+        <div class="form-group">
+          <label for="buyMoney">购买金额</label>
+          <input type="number" class="form-control" placeholder="请输入购买金额(元)" id="buyMoney" name="buyMoney">
+        </div>
+        <div class="form-group">
+          <label for="vipPoints">会员积分</label>
+          <input type="number" class="form-control" placeholder="请输入会员积分(分)" id="vipPoints" name="vipPoints">
+        </div>
+        <div class="checkButton addMoney">添加消费</div>
+      </form>
+    </div>
+
+    <!-- 新增会员 -->
+    <div class="blockTitle blockTitle4">
+      <form class="myForm myForm12">
+        <div class="form-group">
+          <label for="userNameAdd">姓名</label>
+          <input type="text" class="form-control" placeholder="请输入姓名" value="" id="userNameAdd" name="userNameAdd">
+        </div>
+        <div class="form-group">
+          <label for="userPhoneAdd">手机号码</label>
+          <input type="tel" class="form-control" placeholder="请输入手机号码" id="userPhoneAdd" name="userPhoneAdd">
+        </div>
+        <div class="form-group">
+          <label for="bornTimeAdd" style="line-height: 0.75rem;">出生日期</label>
+          <input type="text" class="form-control" placeholder="示例值：2026-06-06" value="" id="bornTimeAdd"
+            name="bornTimeAdd">
+        </div>
+        <div class="checkButton addPeople">添加会员</div>
+      </form>
+    </div>
+
+    <!-- 购买记录 -->
+    <div class="blockTitle blockTitle5">
+      <form class="myForm myForm13">
+        <div class="form-group">
+          <label for="userNameBuy">姓名</label>
+          <input type="text" class="form-control" placeholder="请输入姓名" value="" id="userNameBuy" name="userNameBuy">
+        </div>
+        <div class="form-group">
+          <label for="userPhoneBuy">手机号码</label>
+          <input type="tel" class="form-control" placeholder="请输入手机号码" id="userPhoneBuy" name="userPhoneBuy">
+        </div>
+        <div class="checkButton buyHistory">查询购买记录</div>
+      </form>
+    </div>
+
+
+    <!--bootstrap form表单 -->
+
+
+    <!-- 要渲染的东西 -->
+    <div class="textContent">
+
+    </div>
+
+
+
+    <div class="modal fade modal-dialog-centered" style="display: none;" id="modal" data-backdrop="static"
+      data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">注意</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" style="font-size: 0.8rem;">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="font-size: 0.4rem;">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="closed" class="btn btn-primary confirm closed" data-dismiss="modal"
+              style="width: 40%;">关闭</button>
+            <button type="button" id="confirm" class="btn btn-primary confirm" data-dismiss="modal"
+              style="width: 40%;">确定</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+  <!-- bootstrap插件的js文件 -->
+  <script src="./publics/js/jquery.min.js"> </script>
+  <script src="./publics/js/popper.min.js"> </script>
+  <script src="./publics/js/bootstrap.min.js"> </script>
+  <!-- <script src=""> </script> -->
+
+
+  <!-- <script src="./js/flexible.js"></script> -->
+  <!-- <script src="/public/js/yzCode.js"></script> -->
+
+
+  <script src="./publics/js/wepay.js"></script>
+
+  <script>
+
+  </script>
+
+</body>
+
+</html>
